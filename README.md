@@ -6,11 +6,13 @@ milestone at a time, like a small game studio.
 
 ## Status
 
-**Milestone 1 – Foundation (complete)**
+**Foundation and production architecture (in progress)**
 
 - Godot 4.4 project that opens successfully.
-- A professional Main Menu shown on startup.
-- A clean folder structure ready for future development.
+- Bootstrap entry point and dedicated global services.
+- Professional main menu shown on startup.
+- Data-driven weapon and mission definition types.
+- Domain-oriented folder structure ready for future development.
 
 ## Getting started
 
@@ -18,26 +20,27 @@ milestone at a time, like a small game studio.
 2. Open this folder as a project in Godot (`Import` → select `project.godot`).
 3. Press <kbd>F5</kbd> to run. You should see the **SUPER SNIPER 8D** main menu.
 
-The startup scene is `scenes/common/Main.tscn`, which instances
-`scenes/menu/MainMenu.tscn`.
+The startup scene is `scenes/bootstrap/Bootstrap.tscn`. It initializes the
+autoload services and opens `scenes/menu/MainMenu.tscn`.
 
 ## Project structure
 
 ```
 SuperSniper8D
-├── assets            # audio, fonts, icons, materials, models, music, shaders, textures, ui
-├── scenes            # common, gameplay, menu, player, enemies, ui, weapons, world
-├── scripts           # enemy, gameplay, managers, player, ui, weapons, utilities
-├── resources         # custom Resource data (weapons, missions, etc.)
-├── saves             # runtime save data location
+├── assets            # characters, environments, weapons, vehicles, ui, vfx, sfx, music, shaders
+├── scenes            # bootstrap, menu, gameplay, world, player, enemies, weapons, ui, missions
+├── scripts           # core, managers, gameplay, ai, weapons, save, economy, network, ui
+├── resources         # authored WeaponDefinition and MissionDefinition assets
+├── data              # importable balancing, localization, configuration data
 ├── addons            # third-party / editor plugins
+├── ARCHITECTURE.md   # runtime, data, and platform integration decisions
 ├── icon.svg          # project icon
 └── project.godot     # engine configuration
 ```
 
 ## Roadmap
 
-- **Milestone 1 – Foundation:** project setup + main menu. ✅
+- **Foundation:** bootstrap, modular services, local profile boundary, and main menu. ✅
 - **Milestone 2 – First playable level:** rooftop scene, player camera, look
   controls, placeholder sniper rifle, scope/zoom, a hittable target.
 - Later milestones: enemy AI, missions, weapon shop/upgrades, save system,

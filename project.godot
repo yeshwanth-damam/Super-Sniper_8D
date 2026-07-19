@@ -12,9 +12,17 @@ config_version=5
 
 config/name="SuperSniper8D"
 config/description="Super Sniper 8D - an original mobile sniper game built with Godot 4."
-run/main_scene="res://scenes/common/Main.tscn"
+run/main_scene="res://scenes/bootstrap/Bootstrap.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*res://scripts/core/game_state.gd"
+SaveManager="*res://scripts/managers/save_manager.gd"
+AudioManager="*res://scripts/managers/audio_manager.gd"
+UIManager="*res://scripts/managers/ui_manager.gd"
+SceneManager="*res://scripts/managers/scene_manager.gd"
 
 [display]
 
